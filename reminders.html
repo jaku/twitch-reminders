@@ -8,137 +8,137 @@
 
 
 <html>
-	<head>
+<head>
 
 
-<!-- This is where you can set the colors and fonts. Find a font you like on Google Fonts and change anywhere it says Play -->
-<style>
-	@font-face {
-		font-family: 'Play', sans-serif;
+	<!-- This is where you can set the colors and fonts. Find a font you like on Google Fonts and change anywhere it says Play -->
+	<style>
+		@font-face {
+			font-family: 'Play', sans-serif;
 		}
-	#reminderContainer {
-		width: 0px;
-		height: 0px;
-		background: rgba(0, 0, 0, 0.35);
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		overflow: hidden;
-		color: white;
-		font-family: 'Play', sans-serif;
-		-webkit-box-shadow: 0px 0px 5px #808080;
-		-webkit-animation: animateReminder 20s 0s 1;
-		}
-
-
-	#reminderHeader {
-		width: 400px;
-		height: 26px;
-		background: rgba(0, 0, 0, 0.55);
-		color: #50ff08;
-		position: relative;
-		overflow: hidden;
-		text-align: center;
-		font-size: 24px;
-		text-shadow: 
-		    -1px -1px 0px #000,
-		     0px -1px 0px #000,
-		     1px -1px 0px #000,
-		    -1px  0px 0px #000,
-		     1px  0px 0px #000,
-		    -1px  1px 0px #000,
-		     0px  1px 0px #000,
-		     1px  1px 0px #000;
-	}
-	#reminderContent {
-		left: 15px;
-		top: 5px;
-		font-size: 20px;
-		width: 400px;
-		height: 140px;
-		position: relative; 
-		overflow: hidden;
-		color: white;
-		text-shadow: 
-		    -1px -1px 0px #000,
-		     0px -1px 0px #000,
-		     1px -1px 0px #000,
-		    -1px  0px 0px #000,
-		     1px  0px 0px #000,
-		    -1px  1px 0px #000,
-		     0px  1px 0px #000,
-		     1px  1px 0px #000;
-	}
-
-	#ContentText {
-		top: 5px;
-		font-size: 20px;
-		width: 380px;
-		height: 140px;
-		position: absolute;
-		overflow: hidden;
-		color: white;
-		text-shadow: 
-		    -1px -1px 0px #000,
-		     0px -1px 0px #000,
-		     1px -1px 0px #000,
-		    -1px  0px 0px #000,
-		     1px  0px 0px #000,
-		    -1px  1px 0px #000,
-		     0px  1px 0px #000,
-		     1px  1px 0px #000;
-	}
-
-	@-webkit-keyframes animateReminder {
-		0%, 100% {
+		#reminderContainer {
 			width: 0px;
-			height: 24px;
-			}
-		20%, 80% {
+			height: 0px;
+			background: rgba(0, 0, 0, 0.35);
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			overflow: hidden;
+			color: white;
+			font-family: 'Play', sans-serif;
+			-webkit-box-shadow: 0px 0px 5px #808080;
+			-webkit-animation: animateReminder 20s 0s 1;
+		}
+
+
+		#reminderHeader {
 			width: 400px;
-			height: 24px;
-			}
-		30%, 70% {
+			height: 26px;
+			background: rgba(0, 0, 0, 0.55);
+			color: #50ff08;
+			position: relative;
+			overflow: hidden;
+			text-align: center;
+			font-size: 24px;
+			text-shadow: 
+			-1px -1px 0px #000,
+			0px -1px 0px #000,
+			1px -1px 0px #000,
+			-1px  0px 0px #000,
+			1px  0px 0px #000,
+			-1px  1px 0px #000,
+			0px  1px 0px #000,
+			1px  1px 0px #000;
+		}
+		#reminderContent {
+			left: 15px;
+			top: 5px;
+			font-size: 20px;
 			width: 400px;
 			height: 140px;
+			position: relative; 
+			overflow: hidden;
+			color: white;
+			text-shadow: 
+			-1px -1px 0px #000,
+			0px -1px 0px #000,
+			1px -1px 0px #000,
+			-1px  0px 0px #000,
+			1px  0px 0px #000,
+			-1px  1px 0px #000,
+			0px  1px 0px #000,
+			1px  1px 0px #000;
+		}
+
+		#ContentText {
+			top: 5px;
+			font-size: 20px;
+			width: 380px;
+			height: 140px;
+			position: absolute;
+			overflow: hidden;
+			color: white;
+			text-shadow: 
+			-1px -1px 0px #000,
+			0px -1px 0px #000,
+			1px -1px 0px #000,
+			-1px  0px 0px #000,
+			1px  0px 0px #000,
+			-1px  1px 0px #000,
+			0px  1px 0px #000,
+			1px  1px 0px #000;
+		}
+
+		@-webkit-keyframes animateReminder {
+			0%, 100% {
+				width: 0px;
+				height: 24px;
+			}
+			20%, 80% {
+				width: 400px;
+				height: 24px;
+			}
+			30%, 70% {
+				width: 400px;
+				height: 140px;
 			}
 		}
 
-	#icon {
-	  left: 300px;
-	  top: 30px; 
-	  color: #00;
-	  position: relative;
-	  font-size: 4em;
-	}
+		#icon {
+			left: 300px;
+			top: 30px; 
+			color: #00;
+			position: relative;
+			font-size: 4em;
+		}
 
 
-	#white {
-	  display: inline-block;
-	  position: absolute;
-	  left: 15px;
-	  top: 8px;
-	  color: white;
-	  font-size: .35em;
-	  z-index: -1;
-	}
+		#white {
+			display: inline-block;
+			position: absolute;
+			left: 15px;
+			top: 8px;
+			color: white;
+			font-size: .35em;
+			z-index: -1;
+		}
 
-		</style>		
-	</head>
-	<body>
-		<div id="reminderContainer">
-			<div id="reminderHeader">
-				<span>Reminder:</span>
-			</div>
-
-			<div id="reminderContent">
-				<div id="icon"></div>
-				<div id="ContentText"></div>
-			</div>
-
-
+	</style>		
+</head>
+<body>
+	<div id="reminderContainer">
+		<div id="reminderHeader">
+			<span>Reminder:</span>
 		</div>
-	</body>
+
+		<div id="reminderContent">
+			<div id="icon"></div>
+			<div id="ContentText"></div>
+		</div>
+
+
+	</div>
+</body>
 </html>
 
 <!-- This is where most of the work is handled -->
@@ -148,9 +148,9 @@
 <!-- Just copy and paste the whole response between the quotes in botauth and fill out the other values -->
 <script>
 
-var channel = "YOUR_CHANNEL";
-var botname = "BOTNAME";
-var botauth = "oauth:";
+	var channel = "YOUR_CHANNEL";
+	var botname = "BOTNAME";
+	var botauth = "oauth:";
 
 
 //These could be turned into 1 function with multiple arguments
@@ -216,8 +216,8 @@ function randomFrom(array) {return array[Math.floor(Math.random() * array.length
 
 function randomReminder() {
 	//if you add new functions above be sure to put their name in here too
-    var func = randomFrom(['discord', 'youtube', 'twitter', 'steam']);
-    window[func]();
+	var func = randomFrom(['discord', 'youtube', 'twitter', 'steam']);
+	window[func]();
 }
 
 
@@ -232,11 +232,11 @@ var wss = "irc-ws.chat.twitch.tv";
 var w=new WebSocket('ws://'+wss);
 
 w.onopen=function(data) {
-w.send('CAP REQ :twitch.tv/tags twitch.tv/commands');
-w.send('PASS ' + botauth);
-w.send('NICK ' + botname);
-w.send('USER ' + botname);
-w.send('JOIN #' + channel);
+	w.send('CAP REQ :twitch.tv/tags twitch.tv/commands');
+	w.send('PASS ' + botauth);
+	w.send('NICK ' + botname);
+	w.send('USER ' + botname);
+	w.send('JOIN #' + channel);
 
 }     
 
