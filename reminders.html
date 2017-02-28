@@ -1,0 +1,245 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- This tells the page to refresh every 900 seconds -->
+<meta http-equiv="refresh" content="900">
+
+
+<html>
+	<head>
+
+
+<!-- This is where you can set the colors and fonts. Find a font you like on Google Fonts and change anywhere it says Play -->
+		<style>
+			@font-face {
+				font-family: 'Play', sans-serif;
+				}
+			#reminderContainer {
+				width: 0px;
+				height: 0px;
+				background: rgba(0, 0, 0, 0.35);
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				overflow: hidden;
+				color: white;
+				font-family: 'Play', sans-serif;
+				-webkit-box-shadow: 0px 0px 5px #808080;
+				-webkit-animation: animateReminder 20s 0s 1;
+				}
+
+
+			#reminderHeader {
+				width: 400px;
+				height: 26px;
+				background: rgba(0, 0, 0, 0.55);
+				color: #50ff08;
+				position: relative;
+				overflow: hidden;
+				text-align: center;
+				font-size: 24px;
+				text-shadow: 
+        -1px -1px 0px #000,
+         0px -1px 0px #000,
+         1px -1px 0px #000,
+        -1px  0px 0px #000,
+         1px  0px 0px #000,
+        -1px  1px 0px #000,
+         0px  1px 0px #000,
+         1px  1px 0px #000;
+				}
+			#reminderContent {
+				left: 15px;
+				top: 5px;
+				font-size: 20px;
+				width: 400px;
+				height: 140px;
+				position: relative; 
+				overflow: hidden;
+				color: white;
+				text-shadow: 
+        -1px -1px 0px #000,
+         0px -1px 0px #000,
+         1px -1px 0px #000,
+        -1px  0px 0px #000,
+         1px  0px 0px #000,
+        -1px  1px 0px #000,
+         0px  1px 0px #000,
+         1px  1px 0px #000;
+				}
+
+			#ContentText {
+				top: 5px;
+				font-size: 20px;
+				width: 380px;
+				height: 140px;
+				position: absolute;
+				overflow: hidden;
+				color: white;
+				text-shadow: 
+        -1px -1px 0px #000,
+         0px -1px 0px #000,
+         1px -1px 0px #000,
+        -1px  0px 0px #000,
+         1px  0px 0px #000,
+        -1px  1px 0px #000,
+         0px  1px 0px #000,
+         1px  1px 0px #000;
+				}
+
+			@-webkit-keyframes animateReminder {
+				0%, 100% {
+					width: 0px;
+					height: 24px;
+					}
+				20%, 80% {
+					width: 400px;
+					height: 24px;
+					}
+				30%, 70% {
+					width: 400px;
+					height: 140px;
+					}
+				}
+
+
+
+#icon {
+  left: 300px;
+  top: 30px; 
+  color: #00;
+  position: relative;
+  font-size: 4em;
+}
+
+
+#white {
+  display: inline-block;
+  position: absolute;
+  left: 15px;
+  top: 8px;
+  color: white;
+  font-size: .35em;
+  z-index: -1;
+}
+
+		</style>		
+	</head>
+	<body>
+		<div id="reminderContainer">
+			<div id="reminderHeader">
+				<span>Reminder:</span>
+			</div>
+
+			<div id="reminderContent">
+				<div id="icon"></div>
+				<div id="ContentText"></div>
+			</div>
+
+
+		</div>
+	</body>
+</html>
+
+<!-- This is where most of the work is handled -->
+<!-- A twitchbot is just another Twitch account you create. -->
+<!-- You can generate your Twitch Bots OAUTH token by going to: https://twitchapps.com/tmi/ -->
+<!-- Make sure you are logged into your bot account and not your account when doing that -->
+<!-- Just copy and paste the whole response between the quotes in botauth and fill out the other values -->
+<script>
+
+var channel = "YOUR_CHANNEL";
+var botname = "BOTNAME";
+var botauth = "oauth:";
+
+
+//These could be turned into 1 function with multiple arguments
+//But for the sake of ease, it's easier to just have them as seperate arguments and to try them out
+
+
+//Some of these w.send will be double quotes and others will be single. Theres better ways to do it, but to keep it easy for you.
+//If you have a word like 
+function twitter() {
+	$('#reminderHeader').html("Twitter");
+	$('#icon').html('<i class="fa fa-twitter">');
+	$('#ContentText').html("<span>Don't forget you can follow on Twitter! <strong>https://twitter.com/jaku</strong></span>");
+	document.getElementById("icon").style.color = "#0084b4";
+
+	setTimeout(function(){
+		w.send("PRIVMSG #" + channel + " :Follow Jaku on Twitter to read his thoughts when you're not watching! http://twitter.jaku.tv");
+	}, 6000);
+
+}
+
+
+function youtube() {
+	$('#reminderHeader').html("YouTube");
+	$('#icon').html('<div id="white"><i class="fa fa-square fa-stack-2x"></i></div><i class="fa fa-youtube-play">');
+	$('#ContentText').html("<span>Subscribe on YouTube for more Jaku! <strong>http://youtube.jaku.tv</strong></span>");
+	document.getElementById("icon").style.color = "#e52d27";
+
+	setTimeout(function(){
+		w.send('PRIVMSG #' + channel + ' :Want to watch more Jaku? Check out our YouTube! http://youtube.jaku.tv');
+	}, 6000);
+
+}
+
+function discord() {
+	$('#reminderHeader').html("Discord");
+	$('#ContentText').html("<span>Chat with us on our Discord! <strong>http://discord.jaku.tv</strong></span>");
+	document.getElementById("icon").style.left = "280px";
+	document.getElementById("icon").style.top = "20px";
+	$('#icon').html('<img width="90" src="https://discordapp.com/assets/2c21aeda16de354ba5334551a883b481.png">');
+
+	setTimeout(function(){
+		w.send("PRIVMSG #" + channel + " :Hang out with us when we aren't streaming on Discord! http://discord.jaku.tv");
+	}, 6000);
+
+}
+
+
+function steam() {
+	$('#reminderHeader').html("Steam");
+	$('#icon').html('<i class="fa fa-steam-square">');
+	$('#ContentText').html("<span>Play me on steam sometime! <strong>http://steam.jaku.tv</strong></span>");
+	document.getElementById("icon").style.color = "gray";
+
+	setTimeout(function(){
+		w.send('PRIVMSG #' + channel + ' :Sometimes we play PC games. Usually on Steam, feel free to friend me! http://steam.jaku.tv');
+	}, 6000);
+
+}
+
+
+
+function randomFrom(array) {return array[Math.floor(Math.random() * array.length)];}
+
+function randomReminder() {
+	//if you add new functions above be sure to put their name in here too
+    var func = randomFrom(['discord', 'youtube', 'twitter', 'steam']);
+    window[func]();
+}
+
+
+//This calls the function randomReminder(), which then chooses one of the names in the list and calls that function on page load.
+//If you want to test a function works after making it just put it here instead of randomReminder();
+//Like the line below but without the //
+//hedge();
+randomReminder();
+
+//AUTH STUFF
+var wss = "irc-ws.chat.twitch.tv";
+var w=new WebSocket('ws://'+wss);
+
+w.onopen=function(data) {
+w.send('CAP REQ :twitch.tv/tags twitch.tv/commands');
+w.send('PASS ' + botauth);
+w.send('NICK ' + botname);
+w.send('USER ' + botname);
+w.send('JOIN #' + channel);
+
+}     
+
+</script>
